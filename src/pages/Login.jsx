@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { loginUser } from '../services/authService';
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './Login.css';
 
