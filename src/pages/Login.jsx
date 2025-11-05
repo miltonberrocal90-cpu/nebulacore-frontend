@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { loginUser } from '../services/authService';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './Login.css';
 
@@ -41,6 +42,13 @@ export default function Login() {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
         <button type="submit">Ingresar</button>
       </form>
+
+      <div className="register-link">
+        <p>¿No tienes cuenta?</p>
+        <Link to="/register">
+          <button>Crear cuenta</button>
+        </Link>
+      </div>
     </div>
   );
 }
