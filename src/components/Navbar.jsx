@@ -1,19 +1,17 @@
 import React from 'react';
-import { useAuth } from '../hooks/useAuth';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
-  const { user, logout } = useAuth();
+  const location = useLocation();
 
-  const handleLogout = () => {
-    logout();
-  };
+  // Ocultar el navbar en rutas específicas como /login
+  const hideNavbar = location.pathname === '/login';
+
+  if (hideNavbar) return null;
 
   return (
     <nav className="navbar">
-      <h1>NebulaCore</h1>
-      {user?.token && (
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      )}
+      {/* Puedes dejar este espacio vacío o agregar navegación si lo necesitas */}
     </nav>
   );
 }

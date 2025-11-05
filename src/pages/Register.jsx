@@ -1,4 +1,6 @@
-const API_URL = 'http://localhost:5000/api/modules';
+import React from 'react';
+
+const API_URL = `${process.env.REACT_APP_API_URL}/api/modules`;
 
 export async function getModules(token) {
   try {
@@ -15,4 +17,13 @@ export async function getModules(token) {
     console.error('Error en getModules:', error);
     return [];
   }
+}
+
+export default function Register() {
+  return (
+    <div>
+      <h2>Registro</h2>
+      {/* Aquí va tu formulario de registro */}
+    </div>
+  );
 }
